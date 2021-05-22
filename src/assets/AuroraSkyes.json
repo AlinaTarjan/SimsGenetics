@@ -2,7 +2,7 @@
   {
     "firstName": "Вероника",
     "lastName": "Ольсен",
-    "image": "/assets/images/Аврора Скайс/Вероника.jpg",
+    "image": "docs/assets/images/Аврора Скайс/Вероника.jpg",
     "mom": "",
     "dad": "",
     "lifeForm": "Человек",
@@ -14,7 +14,7 @@
   {
     "firstName": "Карен",
     "lastName": "Хельгасон",
-    "image": "/assets/images/Аврора Скайс/Карен.jpg",
+    "image": "docs/assets/images/Аврора Скайс/Карен.jpg",
     "mom": "Вероника",
     "dad": "Лиф",
     "lifeForm": "Ведьма",
@@ -36,7 +36,7 @@
   {
     "firstName": "Лиф",
     "lastName": "Хельгасон",
-    "image": "/assets/images/Аврора Скайс/Лиф.jpg",
+    "image": "docs/assets/images/Аврора Скайс/Лиф.jpg",
     "mom": "",
     "dad": "",
     "lifeForm": "Фея",
@@ -60,7 +60,7 @@
   {
     "firstName": "",
     "lastName": "",
-    "image": "/assets/images/Аврора Скайс/Пусто.jpg",
+    "image": "docs/assets/images/Аврора Скайс/Пусто.jpg",
     "mom": "",
     "dad": "",
     "lifeForm": "",
