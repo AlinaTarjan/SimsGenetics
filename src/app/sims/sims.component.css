@@ -1,0 +1,45 @@
+.topline {
+  display: flex;
+  justify-content: space-between;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  height: 630px;
+}
+
+.leftpane {
+  width: 40%;
+  height: 100%;
+  float: left;
+  border-collapse: collapse;
+}
+
+.middlepane {
+  width: 28%;
+  height: 100%;
+  float: left;
+  border-collapse: collapse;
+}
+
+.plussign {
+  width: 5%;
+  height: 100%;
+  float: left;
+  border-collapse: collapse;
+}
+
+.rightpane {
+  width: 27%;
+  height: 100%;
+  position: relative;
+  float: left;
+  border-collapse: collapse;
+}
+
