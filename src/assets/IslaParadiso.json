@@ -1,0 +1,22 @@
+[
+  {
+    "firstName": "Карен",
+    "lastName": "Хельгасон",
+    "image": "../../assets/images/Карен.jpg",
+    "partner1": "Вероника",
+    "lifeDescription": "Я {{sim.firstname}}"
+  },
+  {
+    "firstName": "Вероника",
+    "lastName": "Ольсен",
+    "image": "../../assets/images/Вероника.jpg",
+    "partner1": "Карен"
+  },
+  {
+    "firstName": "Карен",
+    "lastName": "Хельгасон",
+    "image": "../../assets/images/Карен.jpg",
+    "partner1": "Вероника",
+    "lifeDescription": "Я {{sim.firstname}}"
+  }
+]

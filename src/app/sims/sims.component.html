@@ -1,0 +1,114 @@
+<section style="margin-left: 240px">
+  <header>
+    <div class="w3-dropdown-hover w3-red">
+      <h1><button class="w3-button w3-theme">{{currentSource}}</button>
+      <div class="w3-dropdown-content w3-bar-block w3-border">
+        <a (click)="changejsonSource('Аврора Скайс'); displaySims(sims)" class="w3-bar-item w3-button">{{jsonSourceArray[0]}}</a>
+        <a (click)="changejsonSource('Исла Парадисо'); displaySims(sims)" class="w3-bar-item w3-button">{{jsonSourceArray[1]}}</a>
+      </div>
+      </h1>
+    </div>
+  </header>
+
+  <div>
+    <div *ngFor="let sim of sims" id="{{sim.firstName}}">
+      <div *ngIf="sim.firstName !== ''">
+        <div class="topline">
+          <h1 class="w3-xxlarge w3-text-red">{{sim.firstName}} {{sim.lastName}} {{sim.status}}</h1>
+          <h3 class="w3-padding">{{sim.lifeForm}} ({{sim.lifeFormGotFrom}})</h3>
+        </div>
+        <div class="container">
+          <div class="leftpane">
+            <img [src]="sim.image" alt="Фото не найдено" style="width: 450px" class="w3-card-4">
+            <h2 style="display: inline-block; margin-left: 30px; font-size: 50px">=</h2>
+          </div>
+          <div class="middlepane">
+            <img [src]="this.findSimByName(sim.mom).image" alt="Фото не найдено" style="width: 270px; display: block; margin-left: auto;margin-right: auto; padding-top: 30%">
+            <p style="text-align: center">{{this.findSimByName(sim.mom).firstName}} {{this.findSimByName(sim.mom).lastName}}</p>
+          </div>
+          <div class="plussign">
+            <h2 style="text-align: center; padding-top: 217px; font-size: 50px">+</h2>
+          </div>
+          <div class="rightpane">
+            <img [src]="this.findSimByName(sim.dad).image" alt="Фото не найдено" style="width: 270px; display: block; margin-left: auto;margin-right: auto; padding-top: 25%">
+            <p style="text-align: center">{{this.findSimByName(sim.dad).firstName}} {{this.findSimByName(sim.dad).lastName}}</p>
+          </div>
+        </div>
+        <div class="topline">
+          <div style="width: 50%">
+            <h3 style="text-align: center;">Дети</h3>
+            <br>
+            <div *ngFor="let child of sim.children" style="display: inline-block;">
+              <img [src]="this.findSimByName(child).image" alt="Фото не найдено" class="w3-padding" style="width: 200px; margin-left: auto;margin-right: auto;">
+              <p style="text-align: center">{{this.findSimByName(child).firstName}} {{this.findSimByName(child).lastName}}</p>
+            </div>
+          </div>
+          <div style="width: 50%">
+            <h3 style="text-align: center">Характеристики</h3>
+            <br>
+            <table class="w3-table w3-striped w3-bordered w3-card">
+              <thead>
+              <tr class="w3-red">
+                <th>Признак</th>
+                <th>Значение</th>
+                <th>Родитель</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>Цвет волос</td>
+                <td>{{sim.hairColor}}</td>
+                <td>{{sim.hairColorGotFrom}}</td>
+              </tr>
+              <tr class="w3-white">
+                <td>Цвет глаз</td>
+                <td>{{sim.eyeColor}}</td>
+                <td>{{sim.eyeColorGotFrom}}</td>
+              </tr>
+              <tr>
+                <td>Цвет кожи</td>
+                <td>{{sim.skinColor}}</td>
+                <td>{{sim.skinColorGotFrom}}</td>
+              </tr>
+              <tr class="w3-white">
+                <td>Форма носа</td>
+                <td></td>
+                <td>{{sim.noseShapeGotFrom}}</td>
+              </tr>
+              <tr>
+                <td>Форма губ</td>
+                <td></td>
+                <td>{{sim.lipShapeGotFrom}}</td>
+              </tr>
+              <tr class="w3-white">
+                <td>Разрез глаз</td>
+                <td></td>
+                <td>{{sim.eyeShapeGotFrom}}</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="topline">
+          <div style="width: 50%">
+            <h3 style="text-align: center;">Карьера</h3>
+            <div *ngFor="let career of sim.career" style="text-align: center">
+              <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-margin-left" style="color: red"></i>{{career}}</p>
+            </div>
+          </div>
+          <div style="width: 50%">
+            <h3 style="display: inline-block; margin-left: 250px;">Личная жизнь</h3>
+            <div class="w3-card w3-padding-large w3-center w3-margin-top">
+              <div *ngFor="let description of sim.lifeDescription; index as i" style="display: inline-block; margin-left: 5px">
+                <div *ngIf="i % 2 != 0; else elseBlock" style="display: inline-block">
+                  <a href="#{{this.findSimByName(description).firstName}}" style="text-decoration: none">{{this.findSimByName(description).firstName}}</a>
+                </div>
+                <ng-template #elseBlock>{{description}}</ng-template>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
