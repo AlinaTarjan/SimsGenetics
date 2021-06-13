@@ -18,6 +18,7 @@ export class Sim {
   eyeShapeGotFrom?: string;
   career?: Array<string>;
   children?: Array<string>;
+  siblings?: Array<string>;
   lifeDescription?: Array<string>
 
 
@@ -40,6 +41,7 @@ export class Sim {
               eyeShapeGotFrom: string,
               career: Array<string>,
               children: Array<string>,
+              siblings: Array<string>,
               lifeDescription: Array<string>) {
     this.firstName = firstName;
     this.lastName = lastName;
@@ -61,5 +63,6 @@ export class Sim {
     this.career = career;
     this.children = children;
     this.lifeDescription = lifeDescription;
+    this.siblings = siblings;
   }
 }
