@@ -30,7 +30,7 @@
             <h2 style="text-align: center; padding-top: 217px; font-size: 50px">+</h2>
           </div>
           <div class="rightpane">
-            <img [src]="this.findSimByName(sim.dad).image" alt="Фото не найдено" style="width: 270px; display: block; margin-left: auto;margin-right: auto; padding-top: 25%">
+            <img [src]="this.findSimByName(sim.dad).image" alt="Фото не найдено" style="width: 270px; display: block; margin-left: auto;margin-right: auto; padding-top: 30%">
             <p style="text-align: center">{{this.findSimByName(sim.dad).firstName}} {{this.findSimByName(sim.dad).lastName}}</p>
           </div>
         </div>
@@ -104,6 +104,13 @@
                   <a href="#{{this.findSimByName(description).firstName}}" style="text-decoration: none">{{this.findSimByName(description).firstName}}</a>
                 </div>
                 <ng-template #elseBlock>{{description}}</ng-template>
+              </div>
+              <br>
+              <div *ngFor="let siblings of sim.siblings; index as i" style="display: inline-block; margin-left: 5px">
+                <div *ngIf="i % 2 != 0; else elseBlock" style="display: inline-block">
+                  <a href="#{{this.findSimByName(siblings).firstName}}" style="text-decoration: none">{{this.findSimByName(siblings).firstName}}</a>
+                </div>
+                <ng-template #elseBlock>{{siblings}}</ng-template>
               </div>
             </div>
           </div>
